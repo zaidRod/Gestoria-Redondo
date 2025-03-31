@@ -1,0 +1,460 @@
+/*Esto es el reset original*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*Menu de navegación*/
+nav {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    /*    background-color: blue;*/
+}
+
+/*Menú con el logo*/
+
+#logo {
+    width: 184px;
+    height: 79px;
+    background-color: gray;
+    float: left;
+    margin-left: 102px;
+    margin-top: 27px;
+}
+
+#menu {
+    list-style: none;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 46px;
+    /*    background-color: orange;*/
+    margin-right: 47px;
+}
+
+.elementoMenu {
+    margin-top: 23px;
+    float: left;
+
+
+}
+
+.elementoMenu>a {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 2.30rem;
+    font-weight: normal;
+    color: white;
+    text-decoration: none;
+}
+
+/*Sección del encabezado*/
+#encabezado {
+    width: 100%;
+    height: 950px;
+    /*Como el fondo depende de la imagen dejo un color    */
+    background-color: lightgray;
+    position: relative;
+}
+
+#tituloEncabezado {
+    width: 100%;
+    font-size: 6.50rem;
+    /*    background-color: orange;*/
+    text-align: center;
+    position: absolute;
+    font-family: 'Merriweather';
+    top: 296px;
+    color: white;
+    text-shadow: 1px 5px 3px rgba(0, 0, 0, 0.5);
+    font-weight: normal;
+}
+
+#subtituloEncabezado {
+    font-size: 2.5rem;
+    margin-left: 389px;
+    /*    background-color: cyan;*/
+    font-family: 'Playfair Display';
+    position: absolute;
+    top: 629px;
+    color: white;
+    text-shadow: 1px 5px 3px rgba(0, 0, 0, 0.5);
+
+    font-weight: normal;
+
+}
+
+
+/*Sección de servicios*/
+#servicios {
+    width: 100%;
+    height: 950px;
+    background-color: wi;
+    overflow: hidden;
+}
+
+.tituloSeccion {
+    margin-top: 80px;
+    text-align: center;
+    font-family: 'Playfair Display';
+    font-size: 4.37rem;
+    font-weight: normal;
+
+}
+
+.contenedorDesplega {
+    display: flex;
+    width: 1083px;
+    /*    background-color: #fff;*/
+    margin: 60px auto;
+
+}
+
+.opciones {
+    width: 321px;
+    height: 496px;
+    display: flex;
+    flex-direction: column;
+    gap: 25.27px;
+}
+
+.opciones button {
+    cursor: pointer;
+    width: 321px;
+    color: black;
+    height: 77.87px;
+    font-family: 'Roboto';
+    font-size: 2rem;
+    font-weight: normal;
+    border-radius: 8px;
+    border-style: none;
+    background-color: #DDE4EB;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.opciones button.active {
+    text-decoration: underline;
+}
+
+
+.contenido {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Imagen de sección*/
+.contenido div {
+    border-radius: 5px;
+    height: 357px;
+    width: 600px;
+    margin-left: 166px;
+    background-color: purple;
+}
+
+.contenido ul {
+    margin-top: 49px;
+    list-style: disc;
+    margin-left: 209px;
+    font-family: 'Roboto';
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+/*Sección de estadísticas*/
+#estadisticas {
+    width: 100%;
+    height: 370px;
+    background-color: #3F4045;
+    overflow: hidden;
+    display: flex;
+
+}
+
+.contenedorEstadis {
+    display: flex;
+    width: 1163px;
+    height: 203px;
+    margin: 81px auto;
+    gap: 88px;
+    justify-content: center;
+}
+
+.contenidoEstadis {
+    display: flex;
+    gap: 42px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.contenidoEstadis .numero {
+    font-family: 'Roboto';
+    font-size: 6rem;
+    font-weight: normal;
+    color: white;
+}
+
+.contenidoEstadis .texto {
+    font-family: 'Roboto';
+    font-size: 2rem;
+    font-weight: normal;
+    color: white;
+}
+
+/*Sección sobre nosotros*/
+#sobreNosotros {
+    width: 100%;
+    background-color: white;
+    overflow: hidden;
+}
+
+.parrafo {
+    margin: 93px auto;
+    font-family: 'Roboto';
+    font-size: 1.87rem;
+    font-weight: normal;
+    width: 1084px;
+    height: 232px;
+    line-height: 36px;
+}
+
+.contenedorGaleria {
+    display: flex;
+    /*Envuelve los elementos*/
+    flex-wrap: wrap;
+
+    /* Distribuye los elementos de manera que haya espacio entre ellos en el eje principal*/
+    justify-content: space-between;
+
+    /* Establece el espacio entre las filas (eje vertical) */
+    row-gap: 23px;
+
+    /* Establece el espacio entre las columnas (eje horizontal) */
+    column-gap: 67px;
+    margin: 73px auto 60px;
+    width: 974px;
+}
+
+.contenedorFoto {
+    /*Defino el tamaño de cada foto en relación al espacio y resto el gap*/
+    flex: 1 1 calc(33.33% - 67px);
+    max-width: calc(33.33% - 67px);
+    background-color: palegoldenrod;
+    border-radius: 8px;
+}
+
+/*Espacio de la imagenes de la galería*/
+.contenedorFoto div {
+    width: 100%;
+    height: 208px;
+}
+
+
+/*Sección de contacto*/
+#contacto {
+    width: 100%;
+    height: 1621px;
+    background-color: black;
+    overflow: hidden;
+}
+
+.tituloSeccionContac {
+    margin-top: 80px;
+    text-align: center;
+    font-family: 'Playfair Display';
+    font-size: 4.37rem;
+    font-weight: normal;
+    color: white;
+}
+
+.contenedorContacto {
+    width: 954px;
+    height: 158px;
+    margin: 64px auto;
+    /*    background-color: red;*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 207px;
+
+}
+
+.infomacionContac {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+
+}
+
+.elementoContacto {
+    display: flex;
+    align-items: center;
+}
+
+.elementoContacto div {
+    height: 41px;
+    width: 41px;
+    background-color: white;
+    margin-right: 22px;
+}
+
+.elementoContacto span {
+    color: white;
+    font-family: 'Roboto';
+    font-size: 1.87rem;
+    font-weight: normal;
+}
+
+.invitacion {
+    color: white;
+    font-family: 'Roboto';
+    font-size: 1.87rem;
+    font-weight: normal;
+    text-align: center;
+
+}
+
+
+
+
+form {
+    /*    background-color: lightgreen;*/
+    margin: 65px auto;
+    display: flex;
+    width: 524px;
+    flex-direction: column;
+    /* Asegura que los elementos estén en columna */
+    align-items: center;
+    /* Centra los elementos horizontalmente */
+
+
+
+}
+
+input {
+    height: 40px;
+    width: 524px;
+    border-radius: 8px;
+    padding: 9px;
+    font-family: 'Roboto';
+    font-size: 1.25rem;
+    font-weight: normal;
+    box-shadow: 1px 9px 5px rgba(0, 0, 0, 0.57);
+    margin-bottom: 31px;
+    color: #C4C4C4;
+    border-style: none;
+}
+
+button {
+    color: white;
+    font-family: 'Roboto';
+    font-size: 1.87rem;
+    font-weight: normal;
+    width: 138px;
+    height: 46px;
+    background-color: #3F4045;
+    box-shadow: 1px 9px 5px rgba(0, 0, 0, 0.57);
+    margin-top: 30px;
+    border-radius: 8px;
+    border-style: none;
+}
+
+textArea {
+    padding: 9px;
+    width: 524px;
+    height: 121px;
+    border-radius: 8px;
+    font-family: 'Roboto';
+    font-size: 1.25rem;
+    font-weight: normal;
+    color: #C4C4C4;
+    box-shadow: 1px 9px 5px rgba(0, 0, 0, 0.57);
+}
+
+.contenedorDireccion {
+    width: 1016px;
+    height: 94px;
+    /*    background-color: purple;*/
+    display: flex;
+    justify-content: space-between;
+    margin: 55px auto;
+    align-items: center;
+}
+
+.fichaDireccion {
+    width: 427px;
+    height: 78px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+}
+
+
+.fichaDireccion .imagen {
+    width: 41px;
+    height: 41px;
+    margin-right: 11px;
+    background-color: white;
+}
+
+.contenedorMapa {
+    margin: 41px auto;
+    width: 1199px;
+    height: 457px;
+    /*    background-color: lightblue;*/
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/*Sección del footer*/
+
+#footer {
+    width: 100%;
+    height: 153px;
+    background-color: #3F4045;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedorFooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    margin-top: 36px;
+
+}
+
+.contenedorRedes {
+    width: 283px;
+    display: flex;
+    gap: 80px;
+    /*    background-color: skyblue;*/
+
+}
+
+.contenedorRedes div {
+    height: 41px;
+    width: 41px;
+    background-color: white;
+}
+
+.contenedorTexto {
+    font-family: 'Merriweather';
+    font-size: 1.85rem;
+    font-weight: normal;
+    color: white;
+
+    width: 325px;
+}
