@@ -18,8 +18,8 @@ nav {
 
 #logo {
     width: 184px;
-    height: 79px;
-    background-color: gray;
+    height: 83px;
+/*    background-color: gray;*/
     float: left;
     margin-left: 102px;
     margin-top: 27px;
@@ -55,8 +55,11 @@ nav {
     width: 100%;
     height: 950px;
     /*Como el fondo depende de la imagen dejo un color    */
-    background-color: lightgray;
+/*    background-color: lightgray;*/
     position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url("../Media/Inicio hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #tituloEncabezado {
@@ -148,13 +151,12 @@ nav {
 }
 
 /*Imagen de sección*/
-.contenido div {
+#videoServicios {
     border-radius: 5px;
     height: 357px;
     width: 600px;
     margin-left: 166px;
-    background-color: purple;
-}
+    }
 
 .contenido ul {
     margin-top: 49px;
@@ -245,15 +247,18 @@ nav {
     /*Defino el tamaño de cada foto en relación al espacio y resto el gap*/
     flex: 1 1 calc(33.33% - 67px);
     max-width: calc(33.33% - 67px);
-    background-color: palegoldenrod;
-    border-radius: 8px;
+    
 }
 
 /*Espacio de la imagenes de la galería*/
-.contenedorFoto div {
-    width: 100%;
-    height: 208px;
+.contenedorFoto img{
+    width: 280px;
+    height: 210px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+
 }
+
 
 
 /*Sección de contacto*/
@@ -262,6 +267,9 @@ nav {
     height: 1621px;
     background-color: black;
     overflow: hidden;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../Media/Contactofondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .tituloSeccionContac {
@@ -297,12 +305,19 @@ nav {
     align-items: center;
 }
 
-.elementoContacto div {
+.contenedorIcono {
     height: 41px;
     width: 41px;
-    background-color: white;
     margin-right: 22px;
 }
+
+.contenedorIcono img {
+    width: auto;
+    height: 100%;
+    
+}
+
+
 
 .elementoContacto span {
     color: white;
@@ -397,11 +412,16 @@ textArea {
 }
 
 
-.fichaDireccion .imagen {
+.contenedorIconoMaps {
     width: 41px;
     height: 41px;
     margin-right: 11px;
-    background-color: white;
+
+}
+
+.contenedorIconoMaps img{
+    width: auto;
+    height: 100%;
 }
 
 .contenedorMapa {
@@ -444,10 +464,17 @@ textArea {
 
 }
 
-.contenedorRedes div {
+.iconosFooter {
     height: 41px;
     width: 41px;
-    background-color: white;
+    
+}
+
+.iconosFooter img{
+    width: auto;
+    height: 100%;
+
+
 }
 
 .contenedorTexto {
@@ -455,6 +482,7 @@ textArea {
     font-size: 1.85rem;
     font-weight: normal;
     color: white;
+    margin-top: 10px;
 
     width: 325px;
 }
