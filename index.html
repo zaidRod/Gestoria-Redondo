@@ -10,24 +10,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
     <!-- Carga del fichero JS -->
     <script src="JS/script.js"></script>
+
+
+    <!-- Precarga de imagenes -->
+    <link rel="preload" as="image" href='Media/InicioHero1.jpg'>
+    <link rel="preload" as="image" href='Media/InicioHero2.jpg'>
+    <link rel="preload" as="image" href='Media/InicioHero3.jpg'>
+    <link rel="preload" as="image" href='Media/InicioHero4.jpg'>
+
 </head>
 
 <body>
-<!-- Carga del elemento modal -->
-<div id="modalBienvenida">
-    <div id="modalBoxB">
-        <H1>Bienvenido a Redondo & asociados</H1>
-        <button onclick="cerrarMBB()">¿Quieres?</button>
+    <!-- Carga del elemento modal -->
+    <div id="modalBienvenida">
+        <div id="modalBoxB">
+            <H1>Bienvenido a Redondo & asociados</H1>
+            <button onclick="cerrarMBB()">¿Quieres?</button>
+        </div>
     </div>
-</div>
-
-
     <!-- Sección de inicio y cabecera -->
     <header id="encabezado">
-        <nav>
+        <!-- Barra navegación -->
+        <nav id="barraNav">
             <a href="index.html">
                 <img id="logo" src="Media/Logo.png" alt="">
             </a>
@@ -59,20 +65,18 @@
         <h1 class="tituloSeccion">Servicios</h1>
         <div class="contenedorDesplega">
             <div class="opciones">
-                <button class="active">Extranjería</button>
-                <button>Vehículos y tráfico</button>
-                <button>Seguridad social</button>
-                <button>Asesoría jurídica</button>
-                <button>Laboral</button>
+                <button class="active" data-servicio ="extranjeria">Extranjería</button>
+                <button data-servicio="vehiculos">Vehículos y tráfico</button>
+                <button data-servicio="seguridad">Seguridad social</button>
+                <button data-servicio="asesoria">Asesoría jurídica</button>
+                <button data-servicio="laboral">Laboral</button>
             </div>
             <div class="contenido">
                 <video id="videoServicios" src="Media/video.mp4" controls muted poster="Media/portadaVideo.jpg"></video>
-                <ul>
-                    <li>Solicitud y renovación de NIE/TIE</li>
-                    <li>Residencia y nacionalidad<br> española</li>
-                    <li>Permisos de trabajo y estudios</li>
-                    <li>Arraigo y reagrupación familiar</li>
-                </ul>
+                <div class="contenedorInfo">
+                    <ul id="listaServicios">
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -101,23 +105,30 @@
         </div>
         <div class="contenedorGaleria">
             <div class="contenedorFoto">
-                <img src="Media/Galeria1.jpg" alt="">
+                <img class="imgGal" src="Media/Galeria1.jpg" alt="">
             </div>
             <div class="contenedorFoto">
-                <img src="Media/Galeria2.jpg" alt="">
+                <img class="imgGal" src="Media/Galeria2.jpg" alt="">
             </div>
             <div class="contenedorFoto">
-                <img src="Media/Galeria3.jpg" alt="">
+                <img class="imgGal" src="Media/Galeria3.jpg" alt="">
             </div>
             <div class="contenedorFoto">
-                <img src="Media/Galeria4.jpg" alt="">
+                <img class="imgGal" src="Media/Galeria4.jpg" alt="">
             </div>
             <div class="contenedorFoto">
-                <img src="Media/Galeria5.jpg" alt="">
+                <img class="imgGal" src="Media/Galeria5.jpg" alt="">
             </div>
             <div class="contenedorFoto">
-                <img src="Media/Galeria6.jpg" alt="">
+                <img class="imgGal" src="Media/Galeria6.jpg" alt="">
             </div>
+        </div>
+        <!-- Modal de galería -->
+        <div id="modalGaleria">
+            <div id="imageToShow">
+            </div>
+            <button class="lbButtons lbbLeft" onclick="prevImgGal()"><img class="img" src="Media/angle-left-solid.svg" alt=""></button>
+            <button class="lbButtons lbbRight" onclick="nextImgGal()"><img class="img" src="Media/angle-right-solid.svg" alt=""></button>
         </div>
     </section>
     <!-- Sección de contacto -->
@@ -148,13 +159,16 @@
                 <p>¿Tienes dudas?<br>¡Llámanos o déjanos un<br> mensaje!</p>
             </div>
         </div>
+        <!-- Formulario de contacto -->
         <form action="">
-            <input type="text" placeholder="Nombre y apellido">
-            <input type="text" placeholder="Teléfono">
-            <input type="text" placeholder="Correo">
-            <textarea placeholder="¿En que podemos ayudarte?"></textarea>
+            <input id="campoNombre" required type="text" placeholder="Nombre y apellido">
+            <input id="campoTelefono" required type="text" placeholder="Teléfono">
+            <input id="campoCorreo" required type="email" placeholder="Correo">
+            <textarea id="campoMensaje" placeholder="¿En que podemos ayudarte?" required></textarea>
+            <!-- Boton de envio -->
             <button id="botonEnviarC" type="button" onclick="modalContacto()">Enviar</button>
         </form>
+        <!-- Mapa con la dirección -->
         <div class="contenedorDireccion">
             <div class="fichaDireccion">
                 <div class="contenedorIconoMaps">
@@ -170,19 +184,14 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6087.486582233691!2d-3.800458023577525!3d40.281452363860986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418b0ec7281cff%3A0x5cd030bb6a5b2553!2sGestor%C3%ADa%20M.%20Redondo%26Asociados!5e0!3m2!1ses!2ses!4v1742333608426!5m2!1ses!2ses" width="1199" height="457" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
-
-
-<!-- Carga del elemento modal -->
-<div id="modalContacto">
-    <div id="modalBoxC">
-        <H1>Bienvenido a Redondo & asociados</H1>
-        <p id="mensajeContacto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, maxime.</p>
-        <button onclick="cerrarMBC()">Gracias</button>
+    <!-- Carga del elemento modal -->
+    <div id="modalContacto">
+        <div id="modalBoxC">
+            <H1>Gracias, te contactaremos pronto.</H1>
+            <p id="mensajeContacto"></p>
+            <button onclick="cerrarMBC()">Gracias</button>
+        </div>
     </div>
-</div>
-
-
-
     <!-- Footer -->
     <section id="footer">
         <div class="contenedorFooter">
@@ -200,12 +209,20 @@
             <div class="contenedorTexto">Redondo & asociados.</div>
         </div>
     </section>
-
     <script>
-     modalBienvenida();
-
+    //Evita que la animación de los titulos, bajen el scroll y se oculte el menú automáticamente
+    window.addEventListener("load", function() {
+        setTimeout(() => {
+            window.scrollTo(0, 0);
+        }, 50); // Pequeño delay para que no interfiera con el render
+    });
+    //modalBienvenida();
+    
+    //Llamado al hero
+    setInterval(heroSlideShow,3000);
+    //LLamada al light
+    readyLightBox();
     </script>
-
 </body>
 
 </html>
