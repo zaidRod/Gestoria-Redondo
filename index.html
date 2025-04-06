@@ -10,9 +10,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Carga del fichero JS -->
+    <script src="JS/script.js"></script>
 </head>
 
 <body>
+<!-- Carga del elemento modal -->
+<div id="modalBienvenida">
+    <div id="modalBoxB">
+        <H1>Bienvenido a Redondo & asociados</H1>
+        <button onclick="cerrarMBB()">¿Quieres?</button>
+    </div>
+</div>
+
+
     <!-- Sección de inicio y cabecera -->
     <header id="encabezado">
         <nav>
@@ -25,6 +37,12 @@
                 </li>
                 <li class="elementoMenu">
                     <a href="#servicios">Servicios</a>
+                    <ul id="submenu">
+                        <li class="elementoSubmenu"><a href="">Extranjería</a></li>
+                        <li class="elementoSubmenu"><a href="">Vehículos y tráfico</a></li>
+                        <li class="elementoSubmenu"><a href="">Seguridad social</a></li>
+                        <li class="elementoSubmenu"><a href="">Asesoría jurídica</a></li>
+                    </ul>
                 </li>
                 <li class="elementoMenu">
                     <a href="#sobreNosotros">Sobre nosotros</a></li>
@@ -135,7 +153,7 @@
             <input type="text" placeholder="Teléfono">
             <input type="text" placeholder="Correo">
             <textarea placeholder="¿En que podemos ayudarte?"></textarea>
-            <button>Enviar</button>
+            <button id="botonEnviarC" type="button" onclick="modalContacto()">Enviar</button>
         </form>
         <div class="contenedorDireccion">
             <div class="fichaDireccion">
@@ -152,6 +170,19 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6087.486582233691!2d-3.800458023577525!3d40.281452363860986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418b0ec7281cff%3A0x5cd030bb6a5b2553!2sGestor%C3%ADa%20M.%20Redondo%26Asociados!5e0!3m2!1ses!2ses!4v1742333608426!5m2!1ses!2ses" width="1199" height="457" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
+
+
+<!-- Carga del elemento modal -->
+<div id="modalContacto">
+    <div id="modalBoxC">
+        <H1>Bienvenido a Redondo & asociados</H1>
+        <p id="mensajeContacto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, maxime.</p>
+        <button onclick="cerrarMBC()">Gracias</button>
+    </div>
+</div>
+
+
+
     <!-- Footer -->
     <section id="footer">
         <div class="contenedorFooter">
@@ -169,6 +200,12 @@
             <div class="contenedorTexto">Redondo & asociados.</div>
         </div>
     </section>
+
+    <script>
+     modalBienvenida();
+
+    </script>
+
 </body>
 
 </html>

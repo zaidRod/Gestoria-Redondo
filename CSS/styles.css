@@ -3,6 +3,40 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+
+}
+
+
+/*Modal de bienvenida*/
+#modalBienvenida {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    display: none;
+    z-index: 3;
+}
+
+#modalBoxB {
+    width: 800px;
+    height: auto;
+    background-color: lightgrey;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+
+#modalBoxB h1{
+    font-size: 4rem;
+    font-family: 'Merriweather';
+    font-weight: normal;
+
 }
 
 
@@ -19,7 +53,7 @@ nav {
 #logo {
     width: 184px;
     height: 83px;
-/*    background-color: gray;*/
+    /*    background-color: gray;*/
     float: left;
     margin-left: 102px;
     margin-top: 27px;
@@ -38,7 +72,7 @@ nav {
 .elementoMenu {
     margin-top: 23px;
     float: left;
-
+    position: relative;
 
 }
 
@@ -48,16 +82,62 @@ nav {
     font-weight: normal;
     color: white;
     text-decoration: none;
+    transition-property: color;
+    transition-duration: 0.2s;
 }
+
+.elementoMenu>a:hover {
+    color: #d4af37;
+
+}
+
+#submenu {
+    width: 300px;
+    list-style: none;
+    display: none;
+    position: absolute;
+
+
+}
+
+.elementoSubmenu {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+
+/*Regla que muestra el subMenu*/
+.elementoMenu:hover #submenu {
+    display: block;
+
+}
+
+
+.elementoSubmenu>a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    transition-property: color;
+    transition-duration: 0.2s;
+
+}
+
+.elementoSubmenu>a:hover {
+    color: #d4af37;
+}
+
+
+/*Efecto de hover*/
+
 
 /*Sección del encabezado*/
 #encabezado {
     width: 100%;
     height: 950px;
     /*Como el fondo depende de la imagen dejo un color    */
-/*    background-color: lightgray;*/
+    /*    background-color: lightgray;*/
     position: relative;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url("../Media/Inicio hero.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../Media/Inicio hero.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -73,6 +153,28 @@ nav {
     color: white;
     text-shadow: 1px 5px 3px rgba(0, 0, 0, 0.5);
     font-weight: normal;
+    animation: fadein;
+    animation-duration: 3s;
+
+
+}
+
+/*Animacion*/
+@keyframes fadein {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 #subtituloEncabezado {
@@ -86,8 +188,30 @@ nav {
     text-shadow: 1px 5px 3px rgba(0, 0, 0, 0.5);
 
     font-weight: normal;
+    animation: sub;
+    animation-duration: 3s;
 
 }
+
+@keyframes sub {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+
 
 
 /*Sección de servicios*/
@@ -156,7 +280,7 @@ nav {
     height: 357px;
     width: 600px;
     margin-left: 166px;
-    }
+}
 
 .contenido ul {
     margin-top: 49px;
@@ -247,17 +371,26 @@ nav {
     /*Defino el tamaño de cada foto en relación al espacio y resto el gap*/
     flex: 1 1 calc(33.33% - 67px);
     max-width: calc(33.33% - 67px);
-    
+    /*    Para que no salga del contenedor*/
+    overflow: hidden;
+
 }
 
 /*Espacio de la imagenes de la galería*/
-.contenedorFoto img{
+.contenedorFoto img {
     width: 280px;
     height: 210px;
     border-radius: 5px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    transition-property: transform;
+    transition-duration: 0.3s;
 
 }
+
+.contenedorFoto img:hover {
+    transform: scale(1.2, 1.2);
+
+}
+
 
 
 
@@ -314,8 +447,13 @@ nav {
 .contenedorIcono img {
     width: auto;
     height: 100%;
-    
+    transition: transform 0.3s ease;
 }
+
+.contenedorIcono img:hover {
+    transform: scale(1.2);
+}
+
 
 
 
@@ -378,6 +516,13 @@ button {
     margin-top: 30px;
     border-radius: 8px;
     border-style: none;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    background-color: white;
+    color: #3F4045;
+    transform: scale(1.1);
 }
 
 textArea {
@@ -419,9 +564,15 @@ textArea {
 
 }
 
-.contenedorIconoMaps img{
+.contenedorIconoMaps img {
     width: auto;
     height: 100%;
+    transition: transform 0.3s ease;
+
+}
+
+.contenedorIconoMaps img:hover {
+    transform: scale(1.2);
 }
 
 .contenedorMapa {
@@ -432,6 +583,41 @@ textArea {
     border-radius: 8px;
     overflow: hidden;
 }
+
+/*Modal de contacto*/
+
+#modalContacto {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    display: none;
+    z-index: 3;
+}
+
+#modalBoxC {  
+    width: 800px;
+    height: auto;
+    background-color: lightgrey;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+
+#modalBoxC h1{
+    font-size: 4rem;
+    font-family: 'Merriweather';
+    font-weight: normal;
+
+}
+
+
 
 /*Sección del footer*/
 
@@ -467,14 +653,18 @@ textArea {
 .iconosFooter {
     height: 41px;
     width: 41px;
-    
+
+
 }
 
-.iconosFooter img{
+.iconosFooter img {
     width: auto;
     height: 100%;
+    transition: transform 0.3s ease;
+}
 
-
+.iconosFooter img:hover {
+    transform: scale(1.2);
 }
 
 .contenedorTexto {
