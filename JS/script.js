@@ -15,35 +15,30 @@ function cerrarMBB() {
 
 // Codigo del slideShow automático
 
-let bgCounter=0;
-function heroSlideShow(){
+let bgCounter = 0;
 
-	let listaImgBg=[
-		"url('Media/InicioHero1.jpg')",
-		"url('Media/InicioHero2.jpg')",
-		"url('Media/InicioHero3.jpg')",
-		"url('Media/InicioHero4.jpg')"
-	];
+function heroSlideShow() {
 
-	bgCounter++;
+    //Listado de imagenes
+    let listaImgBg = [
+        "url('Media/InicioHero1.jpg')",
+        "url('Media/InicioHero2.jpg')",
+        "url('Media/InicioHero3.jpg')",
+        "url('Media/InicioHero4.jpg')"
+    ];
 
-	if(bgCounter ==listaImgBg.length){
-		bgCounter=0;
+    //Aumenta el contador
+    bgCounter++;
 
-	}
+    //Revisa si ha llegado al final
+    if (bgCounter == listaImgBg.length) {
+        bgCounter = 0;
+    }
 
-	document.getElementById("encabezado").style.backgroundImage="linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),"+ listaImgBg[bgCounter];
-
-
-
+    //Agrega la imagen
+    document.getElementById("encabezado").style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3))," + listaImgBg[bgCounter];
 
 }
-
-
-
-
-
-
 
 
 function modalContacto() {
@@ -210,6 +205,35 @@ function prevImgGal() {
 
 // Sección de pestañas
 document.addEventListener('DOMContentLoaded', function() {
+
+
+    //Creación del tooptip
+    const target = document.getElementById('toolTip');
+    //Crea un div para el tooltip
+    const tooltip = document.createElement('div');
+    //Le coloco el CSS
+    tooltip.className = 'tooltip';
+    //Lo agrego al body
+    document.body.appendChild(tooltip);
+
+    target.addEventListener('mouseenter', () => {
+        //Tomo el texto a mostrar del atributo
+        tooltip.textContent = target.getAttribute('mensaje');
+        
+        const rect = target.getBoundingClientRect();
+        tooltip.style.left = `${rect.left + window.scrollX}px`;
+        tooltip.style.top = `${rect.top + window.scrollY - 35}px`;
+        tooltip.style.opacity = '1';
+    });
+
+    target.addEventListener('mouseleave', () => {
+        tooltip.style.opacity = '0';
+    });
+
+
+
+
+
     // Obtener todos los botones
     const botones = document.querySelectorAll('.opciones button');
 

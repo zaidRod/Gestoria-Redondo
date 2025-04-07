@@ -545,6 +545,28 @@ nav {
 
 }
 
+.miTooltip {
+  display: inline-block;
+  padding: 10px;
+  background-color: #eee;
+  border: none  ;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 1000;
+}
+
 
 
 

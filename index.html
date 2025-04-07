@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestoría Redondo y asociados</title>
+    <!-- Hoja de estilos -->
     <link rel="stylesheet" href="CSS/styles.css">
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,14 +13,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!-- Carga del fichero JS -->
     <script src="JS/script.js"></script>
-
-
     <!-- Precarga de imagenes -->
     <link rel="preload" as="image" href='Media/InicioHero1.jpg'>
     <link rel="preload" as="image" href='Media/InicioHero2.jpg'>
     <link rel="preload" as="image" href='Media/InicioHero3.jpg'>
     <link rel="preload" as="image" href='Media/InicioHero4.jpg'>
-
+    <!-- Animation AOS liberia -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body>
@@ -62,10 +63,10 @@
     </header>
     <!-- Sección de servicios -->
     <section id="servicios">
-        <h1 class="tituloSeccion">Servicios</h1>
+        <h1 class="tituloSeccion" data-aos="fade-right">Servicios</h1>
         <div class="contenedorDesplega">
             <div class="opciones">
-                <button class="active" data-servicio ="extranjeria">Extranjería</button>
+                <button class="active" data-servicio="extranjeria">Extranjería</button>
                 <button data-servicio="vehiculos">Vehículos y tráfico</button>
                 <button data-servicio="seguridad">Seguridad social</button>
                 <button data-servicio="asesoria">Asesoría jurídica</button>
@@ -98,8 +99,8 @@
         </div>
     </section>
     <!-- Sección sobre nosotros -->
-    <section id="sobreNosotros">
-        <h1 class="tituloSeccion">Sobre nosotros</h1>
+    <section id="sobreNosotros" >
+        <h1 class="tituloSeccion" data-aos="fade-left">Sobre nosotros</h1>
         <div class="parrafo">
             En Gestoría Redondo y asociados, con más de 10 años de experiencia, ofrecemos soluciones personalizadas y de alta calidad. Nuestro compromiso es brindar un servicio cercano y profesional, adaptado a las necesidades de cada cliente. Con un enfoque innovador, trabajamos para garantizar eficiencia, tranquilidad y éxito, guiando a nuestros clientes en cada paso y asegurando su confianza y satisfacción.
         </div>
@@ -133,7 +134,7 @@
     </section>
     <!-- Sección de contacto -->
     <section id="contacto">
-        <h1 class="tituloSeccionContac">Contacto</h1>
+        <h1 class="tituloSeccionContac" data-aos="fade-right">Contacto</h1>
         <div class="contenedorContacto">
             <div class="infomacionContac">
                 <div class="elementoContacto">
@@ -175,12 +176,17 @@
                     <img src="Media/mapsIcon.svg">
                 </div>
                 <div class="invitacion">Calle sin nombre 10, 28029,<br>Madrid,España</div>
+
             </div>
             <div class="invitacion">
                 ¡También puedes pasarte por el<br>despacho!
             </div>
+
+            <!-- Tooltip -->
+                <div id="toolTip" class="miTooltip"mensaje="Luneas a viernes de 8 am a 8 pm">Nuestros horarios</div>
         </div>
-        <div class="contenedorMapa">
+        <div class="contenedorMapa" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6087.486582233691!2d-3.800458023577525!3d40.281452363860986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418b0ec7281cff%3A0x5cd030bb6a5b2553!2sGestor%C3%ADa%20M.%20Redondo%26Asociados!5e0!3m2!1ses!2ses!4v1742333608426!5m2!1ses!2ses" width="1199" height="457" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
@@ -217,11 +223,15 @@
         }, 50); // Pequeño delay para que no interfiera con el render
     });
     //modalBienvenida();
-    
+
     //Llamado al hero
-    setInterval(heroSlideShow,3000);
+    setInterval(heroSlideShow, 3000);
     //LLamada al light
     readyLightBox();
+    </script>
+    <!-- AOS inicialización -->
+    <script>
+    AOS.init();
     </script>
 </body>
 
